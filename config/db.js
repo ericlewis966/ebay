@@ -23,4 +23,5 @@ client.connect(err => {
   client.close();
 });
 
+
 module.exports = client;

@@ -1,27 +1,24 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
 require('dotenv').config();
 const path = require('path');
+
+
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const app = express();
 const cors = require('cors');
 
-// Connect Database
-const uri = "mongodb+srv://leon:leon@cluster0.1ac24.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-client.connect(err => {
-  // perform actions on the collection object
-  client.close();
-});
-
-if(client.isConnected){
-  console.log("MongoDB is connected")
-}
-
 
 // Init Middleware
 app.use(express.json());
 app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 // Define Routes
 app.use('/api/users', require('./routes/api/users'));
@@ -39,6 +36,19 @@ if (process.env.NODE_ENV === 'production' || true) {
   });
 }
 
+// Connect Database
+
+
+const uri = "mongodb+srv://leon:leon@cluster0.1ac24.mongodb.net/leon?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+client.connect(err => {
+  // perform actions on the collection object
+  client.close();
+});
+
+if(client.isConnected){
+  console.log("MongoDB is connected")
+}
 
 const PORT = process.env.PORT || 80;
 

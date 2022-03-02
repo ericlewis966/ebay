@@ -28,7 +28,7 @@ router.post(
       const user = new User(userdata);
       await user.save();
 
-      const users = await User.find();
+      // const users = await User.find();
       res.status(200).json({status:"Success", users:users})
     } catch (err) {
       console.error(err.message);
