@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/170.6f8468b2.chunk.js","mappings":"iIAUA,UARmB,WACf,OACI","sources":["views/private-view/main/index.js"],"sourcesContent":["import React from 'react';\r\n\r\nconst AdminPanel = () => {\r\n    return (\r\n        <>\r\n            This is AdminPanel\r\n        </>\r\n    )\r\n}\r\n\r\nexport default AdminPanel;"],"names":[],"sourceRoot":""}

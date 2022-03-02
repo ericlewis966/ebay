@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkclient=self.webpackChunkclient||[]).push([[170],{2170:function(n,e,i){i.r(e);i(2791);var t=i(184);e.default=function(){return(0,t.jsx)(t.Fragment,{children:"This is AdminPanel"})}}}]);
+//# sourceMappingURL=170.6f8468b2.chunk.js.map
